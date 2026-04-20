@@ -1,4 +1,4 @@
-const BASE_URL = "www.themealdb.com/api/json/v1"
+const BASE_URL = "https://www.themealdb.com/api/json/v1/1"
 
 async function fetchData(endpoint) {
     const res = await fetch(`${BASE_URL}${endpoint}`)
