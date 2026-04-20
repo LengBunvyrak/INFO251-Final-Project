@@ -1,4 +1,4 @@
-import { getRandomMeal } from "../api/fetct_api.js";
+import { getRandomMeal } from "../../api/fetct_api.js";
 
 const container = document.getElementsById('mealContainer')
 const randomBtn = document.getElementById('randomBtn')
@@ -18,7 +18,7 @@ const getIngredients = (meal) => {
 
 // Meal Rendering
 const displayMeal = (meal) => {
-    const ingredient = getIngredients(meal)
+    const ingredients = getIngredients(meal)
 
     container.innerHTML = `
         <div class="col-12">
