@@ -1,6 +1,6 @@
 import { getRandomMeal } from "../../api/fetct_api.js";
 
-const container = document.getElementsById('mealContainer')
+const container = document.getElementById('mealContainer')
 const randomBtn = document.getElementById('randomBtn')
 
 const getIngredients = (meal) => {
