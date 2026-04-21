@@ -61,6 +61,8 @@ const displayMeal = (meal) => {
 
     document.getElementById("againBtn").addEventListener("click", loadMeal)
     document.getElementById("saveBtn").addEventListener("click", () => {saveMeal(meal.idMeal)})
+
+    
 }
 
 const loadMeal = async () => {

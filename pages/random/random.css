@@ -1,3 +1,13 @@
 .gradient {
     background-image: linear-gradient(180deg, var(--bs-purple), #6f4d86);
 }
+
+.ingredient-chip {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: var(--radius-sm);
+    font-weight: 400;
+}
