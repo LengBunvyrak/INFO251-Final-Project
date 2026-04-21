@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Meals</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+    <nav>
+        <a class="logo" href="#">Sav<span>eur</span></a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="random.html" class="nav-cta">Random Meal →</a></li>
+            <!-- Dark mode button toggle -->
+            <li><button id="themeToggle" class="btn btn-light btn-sm ms-2">Dark Mode</button></li>
+        </ul>
+    </nav>
+</header>
+
+    <!-- HERO -->
+    <section class="hero">
+    <div class="hero-left">
+        <p class="hero-eyebrow">Recipes from Around the World</p>
+        <h1 class="hero-title">
+        Cook with<br>
+        <em>Confidence,</em><br>
+        Eat with Joy
+        </h1>
+        <p class="hero-subtitle">
+        Discover thousands of recipes from every corner of the globe — from quick weeknight dinners to showstopping feasts.
+        </p>
+        <div class="hero-actions">
+        <a href="random.html" class="btn-primary">Discover a Random Meal</a>
+        <a href="search.html" class="btn-ghost">Browse All Recipes</a>
+        </div>
+        <div class="hero-stats">
+        <div>
+            <span class="stat-num">12,400+</span>
+            <span class="stat-label">Recipes</span>
+        </div>
+        <div>
+            <span class="stat-num">85</span>
+            <span class="stat-label">Cuisines</span>
+        </div>
+        <div>
+            <span class="stat-num">Free</span>
+            <span class="stat-label">Forever</span>
+        </div>
+        </div>
+    </div>
+
+    <div class="hero-right">
+        <div class="mosaic">
+        <div class="mosaic-cell large">
+            <img src="https://www.themealdb.com/images/media/meals/wvpvsu1468196965.jpg" alt="Beef tacos">
+            <span class="mosaic-tag">Mexican</span>
+        </div>
+        <div class="mosaic-cell">
+            <img src="https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg" alt="Spaghetti">
+            <span class="mosaic-tag">Italian</span>
+        </div>
+        <div class="mosaic-cell">
+            <img src="https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg" alt="Teriyaki">
+            <span class="mosaic-tag">Japanese</span>
+        </div>
+        </div>
+    </div>
+    </section>
+<!-- CATEGORY PILLS -->
+<section class="categories-strip">
+  <p class="section-label">Browse by Category</p>
+  <div class="cat-pills">
+    <button class="cat-pill active"><span class="cat-icon">🍽</span> All</button>
+    <button class="cat-pill"><span class="cat-icon">🥩</span> Beef</button>
+    <button class="cat-pill"><span class="cat-icon">🍗</span> Chicken</button>
+    <button class="cat-pill"><span class="cat-icon">🐟</span> Seafood</button>
+    <button class="cat-pill"><span class="cat-icon">🌿</span> Vegetarian</button>
+    <button class="cat-pill"><span class="cat-icon">🍝</span> Pasta</button>
+    <button class="cat-pill"><span class="cat-icon">🍜</span> Soups</button>
+    <button class="cat-pill"><span class="cat-icon">🍰</span> Desserts</button>
+    <button class="cat-pill"><span class="cat-icon">🥗</span> Salads</button>
+    <button class="cat-pill"><span class="cat-icon">🥞</span> Breakfast</button>
+  </div>
+</section>
+
+<!-- FEATURED RECIPES -->
+<section class="featured">
+  <div class="section-header">
+    <h2 class="section-title">Staff <em>Picks</em></h2>
+    <a href="#" class="view-all">View all recipes →</a>
+  </div>
+  <div class="recipe-grid">
+
+    <a href="#" class="recipe-card">
+      <div class="card-img-wrap">
+        <img src="https://www.themealdb.com/images/media/meals/sytuqu1511553755.jpg" alt="Chicken tikka">
+        <span class="card-badge">Popular</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="card-meta-item">⏱ 45 min</span>
+          <span class="card-meta-item">👤 Serves 4</span>
+          <span class="card-meta-item">⭐ 4.8</span>
+        </div>
+        <h3 class="card-title">Chicken Tikka Masala</h3>
+        <p class="card-desc">Tender chicken in a rich, aromatic tomato-cream sauce with warming spices.</p>
+      </div>
+      <div class="card-footer">
+        <span class="card-cuisine">Indian</span>
+        <button class="card-save" title="Save recipe">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        </button>
+      </div>
+    </a>
+
+    <a href="#" class="recipe-card">
+      <div class="card-img-wrap">
+        <img src="https://www.themealdb.com/images/media/meals/wvpvsu1468196965.jpg" alt="Tacos">
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="card-meta-item">⏱ 30 min</span>
+          <span class="card-meta-item">👤 Serves 2</span>
+          <span class="card-meta-item">⭐ 4.7</span>
+        </div>
+        <h3 class="card-title">Beef Tacos al Pastor</h3>
+        <p class="card-desc">Marinated pork with pineapple, served in corn tortillas with fresh cilantro.</p>
+      </div>
+      <div class="card-footer">
+        <span class="card-cuisine">Mexican</span>
+        <button class="card-save" title="Save recipe">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        </button>
+      </div>
+    </a>
+
+    <a href="#" class="recipe-card">
+      <div class="card-img-wrap">
+        <img src="https://www.themealdb.com/images/media/meals/vrspxv1511722823.jpg" alt="Pasta">
+        <span class="card-badge">Quick</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="card-meta-item">⏱ 20 min</span>
+          <span class="card-meta-item">👤 Serves 2</span>
+          <span class="card-meta-item">⭐ 4.9</span>
+        </div>
+        <h3 class="card-title">Pasta Carbonara</h3>
+        <p class="card-desc">Silky eggs, crispy guanciale, and Pecorino in a perfectly emulsified sauce.</p>
+      </div>
+      <div class="card-footer">
+        <span class="card-cuisine">Italian</span>
+        <button class="card-save" title="Save recipe">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        </button>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- DISCOVERY BAND -->
+<section class="discovery-band">
+  <div class="discovery-text">
+    <p class="eyebrow">Feeling Adventurous?</p>
+    <h2>Let us <em>surprise</em> you tonight</h2>
+    <p>
+      Can't decide what to cook? Our random meal generator picks a recipe from thousands of dishes around the world — you might just discover your new favourite.
+    </p>
+    <a href="#" class="btn-primary">Get a Random Recipe</a>
+  </div>
+  <div class="discovery-visual">
+    <div class="spin-card">
+      <span class="spin-emoji">🍜</span>
+      <p class="spin-label">Tonight's suggestion</p>
+      <p class="spin-name">Pad Thai</p>
+      <p class="spin-cuisine">Thai Cuisine · 35 min</p>
+      <a href="#" class="btn-primary" style="font-size:0.8rem; padding: 0.7rem 1.5rem;">View Recipe →</a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <h2>Weekly recipes in your inbox</h2>
+  <p>Fresh ideas every Sunday morning — no spam, ever.</p>
+  <div class="email-form">
+    <input type="email" class="email-input" placeholder="your@email.com">
+    <button class="btn-green">Subscribe</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a class="logo" href="#">Sav<span style="color:var(--accent-mid)">eur</span></a>
+  <ul class="footer-links">
+    <li><a href="#">Recipes</a></li>
+    <li><a href="#">Privacy</a></li>
+    <li><a href="#">Terms</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <span>© 2025 Saveur</span>
+</footer>
+
+<script>
+  document.querySelectorAll('.cat-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('.card-save').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const svg = btn.querySelector('path');
+      if (btn.dataset.saved) {
+        svg.setAttribute('fill', 'none');
+        delete btn.dataset.saved;
+        btn.style.background = '';
+        btn.style.borderColor = '';
+      } else {
+        svg.setAttribute('fill', '#C8412A');
+        svg.setAttribute('stroke', '#C8412A');
+        btn.dataset.saved = '1';
+        btn.style.background = 'var(--accent-light)';
+        btn.style.borderColor = 'var(--accent)';
+      }
+    });
+  });
+</script>
+</body>
+</html>
