@@ -1,4 +1,6 @@
 import { getRandomMeal } from "../../api/fetct_api.js";
+import toggleDarkMode from "../../app.js";
+
 
 const container = document.getElementById("mealContainer");
 const randomBtn = document.getElementById("randomBtn");
@@ -146,3 +148,4 @@ const saveMeal = (id) => {
 randomBtn.addEventListener("click", loadMeal);
 
 loadMeal();
+toggleDarkMode();
