@@ -38,6 +38,41 @@ transition: all 0.3s ease;
 background: var(--primary) !important;
 }
 
+/* sticky header */
+header {    
+position: sticky;
+height: 13.5vh;
+top: 0;
+right: 0;
+left: 0;
+}
+
+/* Shrink effect when scrolling */
+header {
+    transition: all 0.4s ease;
+    transform-origin: top;
+    z-index: 1000;
+}
+
+header .logo {
+    height: 80px;
+}
+
+/* 👇 This runs when user scrolls down */
+header.shrink {
+    height: 10vh; /* slightly smaller header */
+    transform: scaleY(0.95); /* zoom-out effect */
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: make logo shrink too */
+header.shrink .logo {
+    transform: scale(0.9);
+    transition: transform 0.4s ease;
+    height: 65px;
+}
+
 .hero {
 text-align: center;
 padding: 60px 20px;
