@@ -942,3 +942,306 @@ footer .logo { font-size: 1.25rem; color: var(--cream); }
     font-weight: 500;
     min-width: 70px;
 }
+
+
+
+
+
+/* Profile-specific styles */
+.profile-hero {
+    background: var(--warm-white);
+    padding: 3rem 4rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-light), var(--sand));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--accent);
+    font-weight: 700;
+    border: 3px solid var(--border);
+}
+
+.profile-info h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+}
+
+.profile-bio {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 500px;
+    margin-top: 0.75rem;
+}
+
+.profile-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.profile-stat {
+    text-align: center;
+}
+
+.profile-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    display: block;
+}
+
+.profile-stat-label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.25rem;
+}
+
+.profile-content {
+    padding: 4rem 4rem 5rem;
+    background: var(--cream);
+}
+
+.profile-section {
+    margin-bottom: 4rem;
+}
+
+.profile-section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.profile-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+}
+
+.profile-section-title em {
+    font-style: italic;
+    color: var(--accent);
+}
+
+.profile-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.saved-empty {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--muted);
+}
+
+.saved-empty-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.saved-empty h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+}
+
+.saved-empty p {
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.preferences-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.preference-item {
+    background: var(--warm-white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.preference-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.preference-select {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    background: var(--cream);
+    color: var(--ink);
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.preference-select:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.dietary-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.dietary-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.dietary-tag:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.dietary-tag.active {
+    background: var(--accent);
+    color: white;
+}
+
+.activity-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-text {
+    font-size: 0.9rem;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+}
+
+.activity-text strong {
+    font-weight: 500;
+    color: var(--accent);
+}
+
+.activity-time {
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+.edit-profile-form {
+    background: var(--warm-white);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    background: var(--cream);
+    color: var(--ink);
+    transition: border-color 0.2s;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
