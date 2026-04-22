@@ -104,7 +104,7 @@ const displayMeal = (meal) => {
             ${tagPills
               .map(
                 (t, i) =>
-                  `<span class="border border-dark rounded p-1 tag-pill${i === 0 ? " tag-gold" : ""}">${t}</span>`
+                  `<span class="border border-dark rounded p-2 tag-pill${i === 0 ? " tag-gold" : ""}">${t}</span>`
               )
               .join("")}
           </div>
@@ -115,7 +115,7 @@ const displayMeal = (meal) => {
             ${ingredients
               .map(
                 ({ ingredient, measure }) =>
-                  `<span class="ingredient-chip border border-dark rounded"><strong>${measure}</strong> ${ingredient}</span>`
+                  `<span class="ingredient-chip border border-dark rounded p-2"><strong>${measure}</strong> ${ingredient}</span>`
               )
               .join("")}
           </div>
