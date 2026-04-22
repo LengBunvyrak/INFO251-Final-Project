@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - AUPP SLOMO Club Kitchen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar px-4 d-flex justify-content-between gradient">
+            <span class="navbar-brand text-white fw-bold fs-3">AUPP SLOMO CLUB KITCHEN</span>
+
+            <div class="d-flex gap-2 align-items-center">
+                <a href="index.html" class="nav-link m-4 text-white">Home</a>
+                <a href="random.html" class="nav-link m-4 text-white">Random</a>
+                <a href="search.html" class="nav-link m-4 text-white">Search</a>
+                <a href="kitchen.html" class="nav-link m-4 text-white">My Kitchen</a>
+                <a href="profile.html" class="nav-link m-4 text-white fw-bold">Profile</a>
+                <button id="themeToggle" class="btn btn-light btn-sm ms-2">Dark Mode</button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="profile-hero text-center py-5">
+        <div class="container">
+            <div class="profile-avatar-container mb-3">
+                <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-avatar" id="profileAvatar">
+                <button class="btn btn-sm btn-light avatar-edit-btn" id="editAvatarBtn">
+                    <i class="bi bi-camera"></i>
+                </button>
+            </div>
+            <h1 class="fw-bold mb-2" id="profileName">Chef Longsaroth</h1>
+            <p class="text-muted mb-3" id="profileBio">Food enthusiast | Recipe explorer | Kitchen experimenter</p>
+            <div class="d-flex justify-content-center gap-4 mb-3">
+                <div class="stat-item">
+                    <h3 class="fw-bold mb-0" id="savedMealsCount">24</h3>
+                    <small class="text-muted">Saved Meals</small>
+                </div>
+                <div class="stat-item">
+                    <h3 class="fw-bold mb-0" id="recipesTriedCount">87</h3>
+                    <small class="text-muted">Recipes Tried</small>
+                </div>
+                <div class="stat-item">
+                    <h3 class="fw-bold mb-0" id="memberSinceCount">6</h3>
+                    <small class="text-muted">Months Member</small>
+                </div>
+            </div>
+            <button class="btn btn-gradient gradient text-white" id="editProfileBtn">
+                <i class="bi bi-pencil"></i> Edit Profile
+            </button>
+        </div>
+    </section>
+
+    <!-- Profile Content Tabs -->
+    <div class="container my-5">
+        <ul class="nav nav-tabs mb-4" id="profileTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="saved-tab" data-bs-toggle="tab" data-bs-target="#saved" type="button" role="tab">
+                    <i class="bi bi-bookmark-fill"></i> Saved Meals
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="favorites-tab" data-bs-toggle="tab" data-bs-target="#favorites" type="button" role="tab">
+                    <i class="bi bi-heart-fill"></i> Favorites
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button" role="tab">
+                    <i class="bi bi-gear-fill"></i> Settings
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="profileTabsContent">
+            <!-- Saved Meals Tab -->
+            <div class="tab-pane fade show active" id="saved" role="tabpanel">
+                <div class="row g-4" id="savedMealsContainer">
+                    <!-- Saved meals will be loaded here dynamically -->
+                    <div class="col-12 text-center py-5">
+                        <i class="bi bi-bookmark display-1 text-muted"></i>
+                        <p class="text-muted mt-3">No saved meals yet. Start exploring and save your favorites!</p>
+                        <a href="random.html" class="btn btn-gradient gradient text-white mt-2">Discover Meals</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Favorites Tab -->
+            <div class="tab-pane fade" id="favorites" role="tabpanel">
+                <div class="row g-4" id="favoritesContainer">
+                    <!-- Favorite meals will be loaded here dynamically -->
+                    <div class="col-12 text-center py-5">
+                        <i class="bi bi-heart display-1 text-muted"></i>
+                        <p class="text-muted mt-3">No favorite meals yet. Heart the meals you love!</p>
+                        <a href="search.html" class="btn btn-gradient gradient text-white mt-2">Search Meals</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div class="tab-pane fade" id="settings" role="tabpanel">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title mb-4"><i class="bi bi-person-circle"></i> Personal Information</h5>
+                                <form id="profileForm">
+                                    <div class="mb-3">
+                                        <label for="fullName" class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" id="fullName" value="Longsaroth">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" value="lortsarong@aupp.edu.kh">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="bio" class="form-label">Bio</label>
+                                        <textarea class="form-control" id="bio" rows="3">Food enthusiast | Recipe explorer | Kitchen experimenter</textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-gradient gradient text-white">Save Changes</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title mb-4"><i class="bi bi-sliders"></i> Preferences</h5>
+                                <div class="mb-3">
+                                    <label for="dietaryPreferences" class="form-label">Dietary Preferences</label>
+                                    <select class="form-select" id="dietaryPreferences" multiple>
+                                        <option value="vegetarian">Vegetarian</option>
+                                        <option value="vegan">Vegan</option>
+                                        <option value="gluten-free">Gluten-Free</option>
+                                        <option value="dairy-free">Dairy-Free</option>
+                                        <option value="keto">Keto</option>
+                                        <option value="paleo">Paleo</option>
+                                    </select>
+                                    <small class="text-muted">Hold Ctrl (or Cmd) to select multiple</small>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="cuisinePreferences" class="form-label">Favorite Cuisines</label>
+                                    <select class="form-select" id="cuisinePreferences" multiple>
+                                        <option value="italian">Italian</option>
+                                        <option value="asian">Asian</option>
+                                        <option value="mexican">Mexican</option>
+                                        <option value="american">American</option>
+                                        <option value="french">French</option>
+                                        <option value="mediterranean">Mediterranean</option>
+                                    </select>
+                                    <small class="text-muted">Hold Ctrl (or Cmd) to select multiple</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title mb-4"><i class="bi bi-bell"></i> Notifications</h5>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                                    <label class="form-check-label" for="emailNotifications">
+                                        Email Notifications
+                                    </label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="newRecipeAlerts" checked>
+                                    <label class="form-check-label" for="newRecipeAlerts">
+                                        New Recipe Alerts
+                                    </label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="weeklyDigest">
+                                    <label class="form-check-label" for="weeklyDigest">
+                                        Weekly Digest
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card shadow-sm border-danger">
+                            <div class="card-body">
+                                <h5 class="card-title text-danger mb-3"><i class="bi bi-exclamation-triangle"></i> Danger Zone</h5>
+                                <p class="text-muted">Delete your account and all associated data.</p>
+                                <button class="btn btn-outline-danger" id="deleteAccountBtn">Delete Account</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="quickEditForm">
+                        <div class="mb-3">
+                            <label for="modalName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="modalName" value="Chef Longsaroth">
+                        </div>
+                        <div class="mb-3">
+                            <label for="modalBio" class="form-label">Bio</label>
+                            <textarea class="form-control" id="modalBio" rows="3">Food enthusiast | Recipe explorer | Kitchen experimenter</textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-gradient gradient text-white" id="saveProfileBtn">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="profile.js"></script>
+</body>
+</html>
