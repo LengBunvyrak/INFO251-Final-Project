@@ -14,6 +14,18 @@
     --sand: #E8DFD0;
 }
 
+/* ── Dark mode layer ──────────────────────────────────────── */
+[data-theme="dark"] {
+    --cream:       #111111;
+    --warm-white:  #181818;
+    --ink:         #F0EDE8;
+    --muted:       #888;
+    --border:      rgba(240,237,232,0.1);
+    --sand:        #222;
+    --accent-light:#3a1510;
+    --green-light: #0e1a0e;
+}
+
 body {
     font-family: 'DM Sans', sans-serif;
     background: var(--cream);
@@ -1246,6 +1258,475 @@ footer .logo { font-size: 1.25rem; color: var(--cream); }
     margin-top: 2rem;
 }
 
-.card-footer button { 
-    
+
+/* My Kitchen */
+/* ── Hero / header ────────────────────────────────────────── */
+.kitchen-hero {
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 4rem 0;
+}
+
+.kitchen-hero-inner {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+
+.kitchen-page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    line-height: 1.05;
+    margin-bottom: 0.5rem;
+}
+
+.kitchen-page-title em {
+    font-style: italic;
+    color: var(--accent);
+}
+
+.kitchen-subtitle {
+    font-size: 0.95rem;
+    color: var(--muted);
+    font-weight: 300;
+    margin-top: 0.5rem;
+}
+
+/* ── Tabs ─────────────────────────────────────────────────── */
+.kitchen-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: none;
+}
+
+.ktab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--muted);
+    padding: 0.65rem 0;
+    margin-right: 2.5rem;
+    margin-bottom: -1px;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.ktab:hover { color: var(--ink); }
+
+.ktab.active {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+    font-weight: 500;
+}
+
+.ktab-count {
+    color: var(--muted);
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+/* ── Content sections ─────────────────────────────────────── */
+.kitchen-section {
+    padding: 3.5rem 4rem 5rem;
+    background: var(--cream);
+    min-height: 40vh;
+}
+
+/* ── Empty states ─────────────────────────────────────────── */
+.empty-state {
+    text-align: center;
+    padding: 5rem 2rem;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.empty-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1.25rem;
+    opacity: 0.6;
+}
+
+.empty-state h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.65rem;
+}
+
+.empty-state p {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+.link-accent {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+.link-accent:hover { border-bottom-color: var(--accent); }
+
+/* ── Recipe cards (reuses .recipe-card from style.css) ────── */
+/* Override card-body padding for our action buttons */
+.mk-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.25rem;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+
+.mk-btn-view,
+.mk-btn-edit,
+.mk-btn-remove {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    padding: 0.35rem 0.9rem;
+    border-radius: 2rem;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    background: transparent;
+    color: var(--muted);
+    transition: all 0.2s;
+}
+
+.mk-btn-view:hover {
+    background: var(--ink);
+    color: var(--cream);
+    border-color: var(--ink);
+}
+
+.mk-btn-edit:hover {
+    background: var(--accent-light);
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.mk-btn-remove {
+    margin-left: auto;
+}
+
+.mk-btn-remove:hover {
+    background: #f9eae7;
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* custom dish badge */
+.custom-badge {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 1rem;
+}
+
+/* ── Modals ───────────────────────────────────────────────── */
+.mk-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(28, 21, 16, 0.55);
+    backdrop-filter: blur(3px);
+    z-index: 500;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    animation: mkFadeIn 0.15s ease;
+}
+
+.mk-overlay.d-none { display: none !important; }
+
+@keyframes mkFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.mk-modal {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: mkSlideUp 0.2s ease;
+    box-shadow: 0 24px 60px rgba(28,21,16,0.18);
+}
+
+.mk-modal--wide { max-width: 720px; }
+.mk-modal--sm   { max-width: 420px; }
+
+@keyframes mkSlideUp {
+    from { transform: translateY(24px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}
+
+.mk-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1.75rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.mk-modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin: 0;
+}
+
+.mk-close {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--muted);
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+}
+.mk-close:hover { background: var(--accent-light); color: var(--accent); }
+
+.mk-modal-body {
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.mk-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding: 1.25rem 1.75rem;
+    border-top: 1px solid var(--border);
+}
+
+/* ── Form elements ────────────────────────────────────────── */
+.mk-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.mk-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.mk-label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.mk-required { color: var(--accent); }
+.mk-optional { font-weight: 300; text-transform: none; font-size: 0.72rem; }
+.mk-hint     { font-weight: 300; text-transform: none; font-size: 0.72rem; }
+
+.mk-input {
+    width: 100%;
+    background: var(--cream);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: var(--ink);
+    padding: 0.7rem 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.mk-input::placeholder { color: var(--muted); }
+
+.mk-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(200, 65, 42, 0.1);
+}
+
+.mk-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237A6E65' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+    cursor: pointer;
+}
+
+.mk-select option { background: var(--warm-white); color: var(--ink); }
+
+.mk-textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
+
+/* ── Danger button ────────────────────────────────────────── */
+.btn-danger {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-danger:hover { background: #a83320; }
+
+/* ── Detail view inside modal ─────────────────────────────── */
+.detail-meal-img {
+    width: 100%;
+    border-radius: 12px;
+    aspect-ratio: 16/7;
+    object-fit: cover;
+    margin-bottom: 1.25rem;
+}
+
+.detail-meal-img-placeholder {
+    width: 100%;
+    border-radius: 12px;
+    aspect-ratio: 16/7;
+    background: var(--sand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    margin-bottom: 1.25rem;
+}
+
+.detail-meal-badge {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.detail-meal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.85rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+}
+
+.detail-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+}
+
+.detail-ingredients {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.4rem 2rem;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.detail-ingredients li {
+    font-size: 0.85rem;
+    color: var(--ink);
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.ingredient-measure {
+    color: var(--accent);
+    font-weight: 500;
+    min-width: 70px;
+}
+
+.detail-instructions {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.9;
+    font-weight: 300;
+    white-space: pre-line;
+}
+
+/* ── Toast ────────────────────────────────────────────────── */
+.mk-toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 2rem;
+    z-index: 9999;
+    box-shadow: 0 8px 24px rgba(28,21,16,0.2);
+    animation: mkFadeIn 0.2s ease;
+}
+
+/* ── Loading spinner ──────────────────────────────────────── */
+.mk-spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: mkSpin 0.7s linear infinite;
+    margin: 3rem auto;
+    display: block;
+}
+
+@keyframes mkSpin { to { transform: rotate(360deg); } }
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .kitchen-hero        { padding: 2.5rem 1.5rem 0; }
+    .kitchen-hero-inner  { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+    .kitchen-page-title  { font-size: 2.5rem; }
+    .kitchen-section     { padding: 2.5rem 1.5rem 4rem; }
+    .mk-row              { grid-template-columns: 1fr; }
+    .mk-modal-body,
+    .mk-modal-header,
+    .mk-modal-footer     { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .detail-ingredients  { grid-template-columns: 1fr; }
 }
