@@ -1590,7 +1590,7 @@ footer .logo { font-size: 1.25rem; color: var(--cream); }
 .mk-textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
 
 /* ── Danger button ────────────────────────────────────────── */
-.btn-danger {
+/* .btn-danger {
     background: var(--accent);
     color: white;
     border: none;
@@ -1602,7 +1602,7 @@ footer .logo { font-size: 1.25rem; color: var(--cream); }
     cursor: pointer;
     transition: background 0.2s;
 }
-.btn-danger:hover { background: #a83320; }
+.btn-danger:hover { background: #a83320; } */
 
 /* ── Detail view inside modal ─────────────────────────────── */
 .detail-meal-img {

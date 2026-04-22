@@ -59,7 +59,7 @@ const loadSavedMeals = async () => {
             <p class="card-desc">${meal.strCategory} • ${meal.strArea}</p>
           </div>
           <div class="card-footer">
-            <button onclick="removeMeal('${meal.idMeal}')">Remove</button>
+            <button class="btn btn-sm btn-outline-danger btn-ghost remove-btn" onclick="removeMeal('${meal.idMeal}')">Remove</button>
           </div>
         </div>
       `;
@@ -77,7 +77,3 @@ const loadSavedMeals = async () => {
   }
 };
 
-
-document.addEventListener("DOMContentLoaded", () => {
-  loadSavedMeals();
-});
