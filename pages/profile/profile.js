@@ -28,9 +28,8 @@ const loadSavedMeals = async () => {
                         <p class="card-desc">${meal.strCategory} • ${meal.strArea}</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-sm btn-outline-secondary remove-btn" data-id="${meal.idMeal}">
-                        <i class="bi bi-x-circle me-1"></i>
-                        Remove
+                        <button class="btn btn-sm btn-danger remove-btn" data-id="${meal.idMeal}">
+                            Remove
                         </button>
                     </div>
                 </div>
@@ -43,18 +42,22 @@ const loadSavedMeals = async () => {
         }
     }
 
-    // Attach remove handlers
-    document.querySelectorAll(".remove-btn").forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            const id = e.target.getAttribute("data-id");
+    container.addEventListener("click", (e) => {
+    const btn = e.target.closest(".remove-btn");
+    if (!btn) return;
 
-            // Use shared logic from meals.js
-            toggleSaveMeal(id);
-
-            // Re-render instantly
-            loadSavedMeals();
-        });
+    const id = btn.getAttribute("data-id");
+        toggleSaveMeal(id);
+        loadSavedMeals();
     });
+    // // Attach remove handlers
+    // document.querySelectorAll(".remove-btn").forEach(btn => {
+    //     btn.addEventListener("click", (e) => {
+    //         const id = e.currentTarget.getAttribute("data-id");
+    //         toggleSaveMeal(id);
+    //         loadSavedMeals();
+    //     });
+    // });
 };
 
 /* Toggle save button (UI only) */
