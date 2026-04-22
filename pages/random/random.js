@@ -155,7 +155,7 @@ const displayMeal = (meal) => {
 
   document.getElementById("btn-reroll").addEventListener("click", loadMeal);
   document.getElementById("btn-save").addEventListener("click", () => {
-    saveMeal(meal.idMeal);
+    toggleSaveMeal(meal.idMeal);
     displayMeal(meal);
   });
 };
@@ -186,6 +186,11 @@ const saveMeal = (id) => {
     localStorage.setItem("meals", JSON.stringify(saved));
   }
 };
+
+const handleSaveClick = (id) => {
+  toggleSaveMeal(id)
+  location.reload()
+}
 
 randomBtn.addEventListener("click", loadMeal);
 

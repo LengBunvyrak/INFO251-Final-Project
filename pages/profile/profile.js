@@ -1,4 +1,63 @@
-/* Toggle save button */
+const container = document.getElementById("savedMealsContainer");
+const countEl = document.getElementById("savedCount");
+
+const loadSavedMeals = async () => {
+    if (!container || !countEl) return;
+
+    const savedIds = JSON.parse(localStorage.getItem("meals")) || [];
+
+    // Update count
+    countEl.textContent = savedIds.length;
+
+    container.innerHTML = "";
+
+    for (let id of savedIds) {
+        try {
+            const res = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+            const data = await res.json();
+            const meal = data.meals[0];
+
+            const card = `
+                <div class="recipe-card">
+                    <div class="card-img-wrap">
+                        <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+                        <span class="card-badge">Saved</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">${meal.strMeal}</h3>
+                        <p class="card-desc">${meal.strCategory} • ${meal.strArea}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-sm btn-outline-secondary remove-btn" data-id="${meal.idMeal}">
+                        <i class="bi bi-x-circle me-1"></i>
+                        Remove
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            container.innerHTML += card;
+
+        } catch (err) {
+            console.error("Error loading meal:", err);
+        }
+    }
+
+    // Attach remove handlers
+    document.querySelectorAll(".remove-btn").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            const id = e.target.getAttribute("data-id");
+
+            // Use shared logic from meals.js
+            toggleSaveMeal(id);
+
+            // Re-render instantly
+            loadSavedMeals();
+        });
+    });
+};
+
+/* Toggle save button (UI only) */
 function toggleSave(btn) {
     const path = btn.querySelector('path');
     if (btn.dataset.saved) {
@@ -27,50 +86,44 @@ function toggleEditForm() {
     }
 }
 
-/* Save profile - updates name, avatar, and bio */
+/* Save profile */
 function saveProfile() {
-    // Get values from form using IDs
     const nameInput = document.getElementById('nameInput');
     const bioInput = document.getElementById('bioInput');
-    
+
     const newName = nameInput.value.trim();
     const newBio = bioInput.value.trim();
-    
-    // Validate inputs
+
     if (!newName) {
         alert('Please enter a name');
         return;
     }
-    
-    // Update profile name
-    const profileName = document.querySelector('.profile-info h1');
-    profileName.textContent = newName;
-    
-    // Update bio
-    const profileBio = document.querySelector('.profile-bio');
-    profileBio.textContent = newBio;
-    
-    // Update avatar initials
+
+    document.querySelector('.profile-info h1').textContent = newName;
+    document.querySelector('.profile-bio').textContent = newBio;
+
     const avatar = document.querySelector('.profile-avatar');
     const initials = newName.split(' ')
         .map(word => word[0])
         .join('')
         .toUpperCase()
         .substring(0, 2);
+
     avatar.textContent = initials;
-    
-    // Show success message
+
     alert('Profile updated successfully!');
-    
-    // Close edit form
     toggleEditForm();
 }
 
-/* Dietary tag toggles */
-document.addEventListener('DOMContentLoaded', function() {
+/* Dietary tags */
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Existing dietary toggle
     document.querySelectorAll('.dietary-tag').forEach(tag => {
         tag.addEventListener('click', () => {
             tag.classList.toggle('active');
         });
     });
+
+    loadSavedMeals();
 });
