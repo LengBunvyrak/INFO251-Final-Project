@@ -23,15 +23,14 @@ const displayMeal = (meals) => {
 
 <div class="bg-neutral-primary-soft block max-w-sm p-6 border border-default rounded-base shadow-xs p-4">
     <a href="#">
-        <img class="rounded-base" src="${meal.strMealThumb}" alt="${meal.strMeal}" />
+        <img class="rounded-base mb-2" src="${meal.strMealThumb}" alt="${meal.strMeal}" />
     </a>
     <a href="#">
-        <h3>${meal.idMeal}</h3>
-        <h5 class="mt-6 mb-2 text-2xl font-semibold tracking-tight text-heading">${meal.strMeal}</h5>
-        <h4 class="mt-2 mb-2  tracking-tight text-heading">${meal.strCategory}, ${meal.strArea}</h4>
-    </a>
-    <p class="mb-6 text-body"> ${meal.strInstructions.substring(0, 80)}...</p>
-   <button onclick="getMealDetail('${meal.idMeal}')" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-primary rounded-lg hover:bg-primary-hover focus:ring-4 focus:outline-none focus:ring-primary-light">
+        <h2 class="logo mt-7 mb-2 text-2xl font-semibold tracking-tight text-heading text-purple-100 ">${meal.strMeal}</h2>
+        <h6 class="mt-2 mb-2  tracking-tight text-heading text-purple-100">${meal.strCategory}, ${meal.strArea}</h6>
+        </a>
+        <p class="mb-6 text-body"> ${meal.strInstructions.substring(0, 80)}...</p>
+   <button onclick="getMealDetail('${meal.idMeal}')" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-purple-600 rounded-lg hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-300">
       Read more
     </button>
 </div>
@@ -94,21 +93,21 @@ function displayRecipeDetails(meal) {
   container.innerHTML = `
     <div class="max-w-3xl mx-auto p-6 border rounded shadow">
       
-      <h2 class="text-3xl font-bold mb-4 p-2">
+      <h3 class="hero-title text-3xl font-bold mb-4 p-2">
         ${meal.strMeal}
-      </h2>
+      </h3>
 
       <img 
         src="${meal.strMealThumb}" 
         class="w-full rounded mb-4"
       />
 
-      <h3 class="text-xl font-semibold mt-4 mb-2 p-2">Instructions</h3>
+      <h2 class="text-xl font-semibold mt-4 mb-2 p-2">Instructions</h2>
       <p class="text-body mb-4 p-2">
         ${meal.strInstructions}
       </p>
 
-      <h3 class="text-xl font-semibold mt-4 mb-2 p-2">Ingredients</h3>
+      <h2 class="text-xl font-semibold mt-4 mb-2 p-2">Ingredients</h2>
       <ul class="list-disc pl-5">
         ${getIngredients(meal)}
       </ul>
@@ -117,7 +116,7 @@ function displayRecipeDetails(meal) {
         onclick="goBack()" 
         class="mt-6 px-4 py-2 bg-black text-white rounded p-2 m-2"
       >
-        sBack
+        Back
       </button>
 
     </div>
