@@ -17,10 +17,10 @@
     <a class="logo" href="#">Sav<span>eur</span></a>
     <ul class="nav-links">
         <li><a href="#" class="active">Home</a></li>
-        <li><a href="../search/search.html">Recipes</a></li>
-        <li><a href="../mykitchen/mykitchen.html">My Kitchen</a></li>
-        <li><a href="../profile/profile.html">Profile</a></li>
-        <li><a href="../random/random.html" class="nav-cta">Random Meal →</a></li>
+        <li><a href="pages/search/search.html">Recipes</a></li>
+        <li><a href="pages/mykitchen/mykitchen.html">My Kitchen</a></li>
+        <li><a href="pages/profile/profile.html">Profile</a></li>
+        <li><a href="pages/random/random.html" class="nav-cta">Random Meal →</a></li>
         <li><button id="themeToggle" class="btn btn-light btn-sm ms-2"></button></li>
     </ul>
 </nav>
@@ -38,8 +38,8 @@
             Discover thousands of recipes from every corner of the globe — from quick weeknight dinners to showstopping feasts.
         </p>
         <div class="hero-actions">
-            <a href="../random/random.html" class="btn-primary">Discover a Random Meal</a>
-            <a href="../search/search.html" class="btn-ghost">Browse All Recipes</a>
+            <a href="pages/random/random.html" class="btn-primary">Discover a Random Meal</a>
+            <a href="pages/search/search.html" class="btn-ghost">Browse All Recipes</a>
         </div>
         <div class="hero-stats">
             <div>
@@ -100,11 +100,11 @@
 <section class="featured">
     <div class="section-header">
         <h2 class="section-title">Staff <em>Picks</em></h2>
-        <a href="../search/search.html" class="view-all">View all recipes →</a>
+        <a href="pages/search/search.html" class="view-all">View all recipes →</a>
     </div>
     <div class="recipe-grid">
 
-        <a href="../search/search.html?q=Chicken+Handi" class="recipe-card">
+        <a href="pages/search/search.html?q=Chicken+Handi" class="recipe-card">
             <div class="card-img-wrap">
                 <img src="https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg" alt="Chicken Handi">
                 <span class="card-badge">Popular</span>
@@ -126,7 +126,7 @@
             </div>
         </a>
 
-        <a href="../search/search.html?q=Fish+Tacos" class="recipe-card">
+        <a href="pages/search/search.html?q=Fish+Tacos" class="recipe-card">
             <div class="card-img-wrap">
                 <img src="https://www.themealdb.com/images/media/meals/uvuyxu1503067369.jpg" alt="Tacos">
             </div>
@@ -147,7 +147,7 @@
             </div>
         </a>
 
-        <a href="../search/search.html?q=Fettuccine+Alfredo" class="recipe-card">
+        <a href="pages/search/search.html?q=Fettuccine+Alfredo" class="recipe-card">
             <div class="card-img-wrap">
                 <img src="https://www.themealdb.com/images/media/meals/uquqtu1511178042.jpg" alt="Pasta">
                 <span class="card-badge">Quick</span>
@@ -180,7 +180,7 @@
         <p>
             Can't decide what to cook? Our random meal generator picks a recipe from thousands of dishes around the world — you might just discover your new favourite.
         </p>
-        <a href="../random/random.html" class="btn-primary">Get a Random Recipe</a>
+        <a href="pages/random/random.html" class="btn-primary">Get a Random Recipe</a>
     </div>
     <div class="discovery-visual">
         <div class="spin-card">
@@ -188,7 +188,7 @@
             <p class="spin-label">Tonight's suggestion</p>
             <p class="spin-name">General Tsos Chicken</p>
             <p class="spin-cuisine">Chinese Cuisine · 20 min</p>
-            <a href="../search/search.html?q=General+Tsos+Chicken" class="btn-primary" style="font-size:0.8rem; padding: 0.7rem 1.5rem;">View Recipe →</a>
+            <a href="pages/search/search.html?q=General+Tsos+Chicken" class="btn-primary" style="font-size:0.8rem; padding: 0.7rem 1.5rem;">View Recipe →</a>
         </div>
     </div>
 </section>
@@ -217,13 +217,13 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script type="module">
-import toggleDarkMode  from "../../app.js";
+import toggleDarkMode  from "./app.js";
 toggleDarkMode();
 </script>
 <script>
     /* Category pills → search page with query param */
     function goToSearch(query) {
-        window.location.href = `../search/search.html?q=${encodeURIComponent(query)}`;
+        window.location.href = `pages/search/search.html?q=${encodeURIComponent(query)}`;
     }
 
     /* Active pill highlight */
